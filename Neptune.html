@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie des Planètes</title>
+  <style>
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgb(39, 76, 144), rgb(48, 19, 135));
+  color: #ffffff;
+}
+
+header {
+  background: rgb(37, 16, 100);;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2.8em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start; /* Aligne le contenu sur la ligne de base */
+  gap: 20px; /* Espacement entre les images et le texte */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images {
+  display: flex;
+  flex-direction: column; /* Images empilées verticalement */
+  gap: 15px;
+}
+
+.images img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid rgb(16, 39, 100);
+}
+
+.p1 {
+  font-size: 1.7em;
+  line-height: 1.6;
+  flex: 1; /* Le texte prend l'espace restant */
+  color: #ffffff;
+}
+
+.mi-iframe {
+    width: 40%;
+    height: 500px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Adaptation pour mobiles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Passe en colonne pour petits écrans */
+    align-items: center;
+  }
+
+  .images img {
+    width: 120px;
+    height: 120px;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Neptune</h2>
+  </header>
+ 
+  <main>
+    <section class="content">
+      <!-- Images -->
+      <div class="images">
+     <img src="téléchargement (8).jpeg">
+     <img src="téléchargement (9).jpeg">
+     <img src="th.jpeg">
+      </div>
+     
+      <!-- Texte -->
+      <p class="p1">
+       c'est la  Huitième planète à partir du Soleil, Neptune est désignée comme une géante de glaces. Elle est surtout composée d'eau, d'ammoniac et de méthane sous forme solide. Neptune a probablement été créée dans un immense nuage de gaz, de poussière et de glace lors de la formation du Système solaire il y a environ 4,5 milliards d'années. Ce nuage s'est aplati pour former un disque en rotation avec le Soleil en son centre. D'après les scientifiques, les géantes de glaces sont différentes des géantes gazeuses (comme Saturne et Jupiter) parce qu'elles ne se seraient pas formées de la même façon.
+
+
+       </p>
+       
+  </main>
+ 
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8NPTlk-WR-Y?si=Nzpg4xNUpzzyEiWq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="mi-iframe"></iframe>
+  </center>
+</body>
+</html>

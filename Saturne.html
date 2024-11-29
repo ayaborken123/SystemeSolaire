@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie des Planètes</title>
+  <style>
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgb(22, 50, 102), #1969b9);
+  color: #ffffff;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.059);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2.8em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start; /* Aligne le contenu sur la ligne de base */
+  gap: 20px; /* Espacement entre les images et le texte */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images {
+  display: flex;
+  flex-direction: column; /* Images empilées verticalement */
+  gap: 15px;
+}
+
+.images img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid rgb(16, 39, 100);
+}
+
+.p1 {
+  font-size: 1.7em;
+  line-height: 1.6;
+  flex: 1; /* Le texte prend l'espace restant */
+  color: #ffffff;
+}
+
+.mi-iframe {
+    width: 40%;
+    height: 500px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Adaptation pour mobiles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Passe en colonne pour petits écrans */
+    align-items: center;
+  }
+
+  .images img {
+    width: 120px;
+    height: 120px;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Saturne</h2>
+  </header>
+ 
+  <main>
+    <section class="content">
+      <!-- Images -->
+      <div class="images">
+     <img src="Saturne.jpeg">
+     <img src="s.jpeg">
+     <img src="pl.avif">
+      </div>
+     
+      <!-- Texte -->
+      <p class="p1">
+        Saturne est la sixième planète à partir du Soleil. Après Jupiter, c'est la plus grosse planète du Système solaire.
+        Comme toutes les autres planètes, Saturne s'est probablement formée dans un grand nuage de gaz, de poussière et de glace.Celui-ci s'est aplati en un disque en rotation.Saturne est surtout connue pour ses très beaux anneaux épais d'une vingtaine de mètres. Certains scientifiques croient que ces anneaux de glaces sont composés des matières laissées par une de ses premières lunes, détruite dans une gigantesque collision avec la jeune planète.
+       </p>
+       
+  </main>
+ 
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pSHTRqKzLKw?si=yBVQHYiyFZInfFw7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="mi-iframe"></iframe>
+  </center>
+</body>
+</html>

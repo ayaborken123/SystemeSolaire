@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie des Planètes</title>
+  <style>
+/* Styles généraux */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgb(141, 96, 143), #325a74);
+  color: #ffffff;
+}
+
+header {
+  background: rgb(213, 10, 142);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2.8em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start; /* Aligne le contenu sur la ligne de base */
+  gap: 20px; /* Espacement entre les images et le texte */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images {
+  display: flex;
+  flex-direction: column; /* Images empilées verticalement */
+  gap: 15px;
+}
+
+.images img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid rgba(82, 70, 78, 0.3);
+}
+
+.p1 {
+  font-size: 1.7em;
+  line-height: 1.6;
+  flex: 1; /* Le texte prend l'espace restant */
+  color: #ffffff;
+}
+
+.mi-iframe{
+    width: 40%;
+    height: 500px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptation pour mobiles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Passe en colonne pour petits écrans */
+    align-items: center;
+  }
+
+  .images img {
+    width: 120px;
+    height: 120px;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h2> Jupiter</h2>
+  </header>
+ 
+  <main>
+    <section class="content">
+      <!-- Images -->
+      <div class="images">
+        <img src="Hubble’s_observation_of_Jupiter_in_2021_(51688147562).jpg">
+        <img src="PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg" alt="Mercure 2">
+        <img src="tkkk.jpeg">
+      </div>
+     
+      <!-- Texte -->
+      <p class="p1">
+        Jupiter est la cinquième planète du Système solaire par ordre d'éloignement au Soleil, et la plus grande par la taille et la masse devant Saturne, qui est comme elle une planète géante gazeuse. Elle est même plus volumineuse que toutes les autres planètes réunies,La plus grosse des planètes du Système solaire Elle a été survolée et étudiée à faible distance par les sondes américaines 
+      </p>
+    </section>
+  </main>
+ 
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zqpb9qwrrfo?si=kbNNzb6isC8dXQSt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="mi-iframe"></iframe>
+  </center>
+</body>
+</html>
