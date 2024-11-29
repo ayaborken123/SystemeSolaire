@@ -1,2 +1,0 @@
-# SystemeSolaire
-Projet Systeme Solaire
