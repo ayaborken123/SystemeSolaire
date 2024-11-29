@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie des Planètes</title>
+    <style>
+      /* Styles généraux */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, rgb(35, 25, 171), #323674);
+        color: #ffffff;
+      }
+
+      header {
+        background: rgb(20, 10, 213);
+        color: #ffffff;
+        text-align: center;
+        padding: 40px;
+      }
+
+      header h2 {
+        margin: 0;
+        font-size: 2.8em;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .content {
+        display: flex;
+        align-items: flex-start; /* Aligne le contenu sur la ligne de base */
+        gap: 20px; /* Espacement entre les images et le texte */
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .images {
+        display: flex;
+        flex-direction: column; /* Images empilées verticalement */
+        gap: 15px;
+      }
+
+      .images img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid rgba(82, 70, 78, 0.3);
+      }
+
+      .p1 {
+        font-size: 1.7em;
+        line-height: 1.6;
+        flex: 1; /* Le texte prend l'espace restant */
+        color: #ffffff;
+      }
+
+      video {
+        width: 50%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .mi-iframe {
+        width: 40%;
+        height: 500px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Adaptation pour mobiles */
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column; /* Passe en colonne pour petits écrans */
+          align-items: center;
+        }
+
+        .images img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Mercure</h2>
+    </header>
+
+    <main>
+      <section class="content">
+        <!-- Images -->
+        <div class="images">
+          <img
+            src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png"
+            alt="Mercure 1"
+          />
+          <img
+            src="https://eoimages.gsfc.nasa.gov/images/imagerecords/78000/78349/arctic_vir_2012147_tn.jpg"
+            alt="Mercure 2"
+          />
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Mercure 3"
+          />
+        </div>
+
+        <!-- Texte -->
+        <p class="p1">
+          Mercure est la planète la plus proche du Soleil dans notre système
+          solaire. C’est également la plus petite des huit planètes. En raison
+          de sa proximité avec le Soleil, elle subit des températures extrêmes.
+          le jour, les températures peuvent atteindre 430°C, tandis que la nuit,
+          elles chutent à -180°C. Sa surface est parsemée de cratères,
+          ressemblant à celle de la Lune, car Mercure ne possède pas
+          d'atmosphère épaisse pour protéger sa surface des météorites. Elle met
+          environ 88 jours terrestres pour faire une orbite complète autour du
+          Soleil. Mercure est aussi une planète rocheuse, composée
+          principalement de métaux et de roches, et elle possède un noyau
+          métallique très dense
+        </p>
+      </section>
+    </main>
+    <center>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/AJbQnUju3Kg?si=LGWk4bJoK3TgHaBr"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        class="mi-iframe"
+      ></iframe>
+    </center>
+  </body>
+</html>
