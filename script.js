@@ -55,3 +55,5 @@ document.querySelector(".forgot-password").addEventListener("click", function (e
     alert("Fonctionnalité 'Mot de passe oublié' à implémenter.");
     
 });
+
+})
