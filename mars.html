@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie des Planètes</title>
+    <style>
+      /* Styles généraux */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #0465c5, #296994);
+        color: #ffffff;
+      }
+
+      header {
+        background: #1376b7;
+        color: #ffffff;
+        text-align: center;
+        padding: 40px;
+      }
+
+      header h2 {
+        margin: 0;
+        font-size: 2.8em;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .content {
+        display: flex;
+        align-items: flex-start; /* Aligne le contenu sur la ligne de base */
+        gap: 20px; /* Espacement entre les images et le texte */
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .images {
+        display: flex;
+        flex-direction: column; /* Images empilées verticalement */
+        gap: 15px;
+      }
+
+      .images img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid rgba(82, 70, 78, 0.3);
+      }
+
+      .p1 {
+        font-size: 1.7em;
+        line-height: 1.6;
+        flex: 1; /* Le texte prend l'espace restant */
+        color: #ffffff;
+      }
+      .mi-iframe {
+        width: 40%;
+        height: 500px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      /* Adaptation pour mobiles */
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column; /* Passe en colonne pour petits écrans */
+          align-items: center;
+        }
+
+        .images img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Mars</h2>
+    </header>
+
+    <main>
+      <section class="content">
+        <!-- Images -->
+        <div class="images">
+          <img src="téléchargement (7).jpeg" />
+          <img src="téléchargement (11).jpeg" />
+          <img src="téléchargement (12).jpeg" />
+        </div>
+
+        <!-- Texte -->
+        <p class="p1">
+          C'est une petite planète : par rapport à la Terre, elle est 7 fois
+          moins volumineuse et 10 fois moins massive. Nous lui donnons aussi le
+          nom de « planète rouge », car sa surface est recouverte de poussière
+          riche en oxyde de fer, à l'origine de sa couleur rougeâtre (couleur de
+          la rouille),Aperçu général. Mars est une planète tellurique et la
+          quatrième à partir du Soleil. Elle est également connue sous le nom de
+          « Planète rouge » en raison de la couleur rouge/orangée de sa surface.
+        </p>
+      </section>
+    </main>
+
+    <center>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/zwYEgCfj8s4?si=vMmZYd4EH6gEc83v"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        class="mi-iframe"
+      ></iframe>
+    </center>
+  </body>
+</html>
