@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Système Solaire</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .option:hover {
+            background: #1abc9c;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result h2 {
+            font-size: 1.8em;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #1abc9c;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button {
+    margin: 30px auto; /* Centrer le bouton horizontalement */
+    text-align: center;
+}
+
+.back-button a {
+    display: inline-block; /* S'assurer que le bouton reste en ligne */
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50; /* Vert moderne */
+    padding: 12px 30px; /* Espacement interne */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px; /* Bord arrondi pour un style moderne */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: all 0.3s ease; /* Animation lors du survol */
+}
+
+.back-button a:hover {
+    background-color: #4CAF50; /* Vert plus foncé au survol */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Accentuation de l'ombre */
+    transform: translateY(-3px); /* Léger déplacement vers le haut */
+}
+
+.back-button a:active {
+    background-color: #4CAF50; /* Couleur plus sombre au clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Réduction de l'ombre */
+    transform: translateY(2px); /* Déplacement vers le bas */
+}
+
+
+        .btn:hover {
+            background: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz : Système Solaire</h1>
+        <div id="quiz-container">
+            <p class="question" id="question">Question</p>
+            <div class="options">
+                <button class="option" onclick="selectAnswer(0)">Option 1</button>
+                <button class="option" onclick="selectAnswer(1)">Option 2</button>
+                <button class="option" onclick="selectAnswer(2)">Option 3</button>
+                <button class="option" onclick="selectAnswer(3)">Option 4</button>
+            </div>
+        </div>
+        <div id="result" class="result" style="display: none;">
+            <h2>Votre score : <span id="score"></span>/20</h2>
+            <button class="btn" onclick="restartQuiz()">Recommencer</button>
+        </div>
+         <div class="back-button">
+            <a href="index.html">← Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <script>
+        const quizQuestions = [
+            { question: "Quelle est la planète la plus proche du Soleil ?", options: ["Mercure", "Vénus", "Terre", "Mars"], answer: 0 },
+            { question: "Quelle planète est surnommée la planète rouge ?", options: ["Vénus", "Jupiter", "Mars", "Neptune"], answer: 2 },
+            { question: "Quelle est la plus grande planète ?", options: ["Mars", "Jupiter", "Saturne", "Uranus"], answer: 1 },
+            { question: "Quelle planète a des anneaux visibles ?", options: ["Terre", "Saturne", "Uranus", "Neptune"], answer: 1 },
+            { question: "Combien de planètes composent le système solaire ?", options: ["6", "7", "8", "9"], answer: 2 },
+            { question: "Quelle est la planète la plus éloignée du Soleil ?", options: ["Uranus", "Pluton", "Neptune", "Jupiter"], answer: 2 },
+            { question: "Quelle planète est connue pour ses vents violents ?", options: ["Mars", "Saturne", "Neptune", "Uranus"], answer: 2 },
+            { question: "Quelle est la planète la plus chaude ?", options: ["Mercure", "Vénus", "Mars", "Terre"], answer: 1 },
+            { question: "Quelle planète est appelée 'la planète bleue' ?", options: ["Mars", "Terre", "Jupiter", "Uranus"], answer: 1 },
+            { question: "Quelle planète a la plus grande tempête connue ?", options: ["Jupiter", "Neptune", "Saturne", "Mars"], answer: 0 },
+            { question: "Quelle planète est inclinée sur le côté ?", options: ["Saturne", "Jupiter", "Uranus", "Vénus"], answer: 2 },
+            { question: "Quelle planète est connue pour son volcan Olympus Mons ?", options: ["Mars", "Mercure", "Terre", "Venus"], answer: 0 },
+            { question: "Combien de lunes possède Saturne (environ) ?", options: ["62", "82", "102", "42"], answer: 1 },
+            { question: "Quelle planète est la plus dense ?", options: ["Mars", "Vénus", "Terre", "Mercure"], answer: 2 },
+            { question: "Quelle planète est appelée la jumelle de la Terre ?", options: ["Mars", "Vénus", "Mercure", "Uranus"], answer: 1 },
+            { question: "Quel est le diamètre approximatif de la Terre ?", options: ["8,000 km", "12,000 km", "15,000 km", "20,000 km"], answer: 1 },
+            { question: "Combien de lunes possède Jupiter ?", options: ["67", "79", "53", "62"], answer: 1 },
+            { question: "Quelle planète est appelée 'la géante gazeuse' ?", options: ["Saturne", "Neptune", "Jupiter", "Uranus"], answer: 2 },
+            { question: "Pluton est maintenant considérée comme :", options: ["Planète naine", "Astéroïde", "Planète", "Lune"], answer: 0 },
+            { question: "Quelle est la composition principale du Soleil ?", options: ["Hydrogène", "Hélium", "Oxygène", "Carbone"], answer: 0 },
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const question = quizQuestions[currentQuestionIndex];
+            document.getElementById("question").innerText = question.question;
+            const options = document.querySelectorAll(".option");
+            options.forEach((option, index) => {
+                option.innerText = question.options[index];
+                option.disabled = false;
+                option.style.background = "#34495e";
+            });
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestionIndex];
+            const options = document.querySelectorAll(".option");
+            options.forEach((option, index) => {
+                if (index === question.answer) {
+                    option.style.background = "#1abc9c";
+                } else if (index === selectedIndex) {
+                    option.style.background = "#e74c3c";
+                }
+                option.disabled = true;
+            });
+
+            if (selectedIndex === question.answer) {
+                score++;
+            }
+
+            currentQuestionIndex++;
+
+            setTimeout(() => {
+                if (currentQuestionIndex < quizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            document.getElementById("quiz-container").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").innerText = score;
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById("quiz-container").style.display = "block";
+            document.getElementById("result").style.display = "none";
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
