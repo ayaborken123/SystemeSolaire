@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="styles.css">
+  <title>Planètes du Système Solaire</title>
+ 
+</head>
+<body>
+
+<header>
+  <h1>Planètes du Système Solaire</h1>
+</header>
+
+<main>
+  <!-- Planète : Mercure -->
+  <div class="planet">
+    <img src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png" alt="Mercure">
+    <div>
+        <a href="mecure.html">Mercure</a>
+    </div>
+  </div>
+
+  <!-- Planète : Vénus -->
+  <div class="planet">
+    <img src="téléchargement (3).jpeg">
+    <div>
+        <a href="venus.html">Vénus</a>
+    </div>
+  </div>
+
+  <!-- Planète : Terre -->
+  <div class="planet">
+    <img src="téléchargement (1).jpeg">
+    <div>
+      <a href="earth.html">Terre</a>
+    </div>
+  </div>
+
+  <!-- Planète : Mars -->
+  <div class="planet">
+    <img src="téléchargement (2).jpeg">
+    <div>
+      <a href="mars.html">Mars</a>
+    </div>
+  </div>
+
+  <!-- Planète : Jupiter -->
+  <div class="planet">
+    <img src="téléchargement.jpeg">
+    <div>
+      <a href="Jupiter.html">Jupiter</a>
+    </div>
+  </div>
+  <div class="planet">
+    <img src="Saturne.jpeg">
+    <div>
+      <a href="Saturne.html">Saturne</a>
+    </div>
+  </div>
+  <!-- Planète : Neptune -->
+  <div class="planet">
+    <img src="https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png" alt="Neptune">
+    <div>
+      <a href="Neptune.html">Neptune</a>
+    </div>
+  </div>
+  <div class="planet">
+    <img src="téléchargement (4).jpeg" alt="Uranus">
+    <div>
+   <a href="Uranus.html">Uranus</a>
+  </div>
+  </div>
+</main>
+<div class="container">
+    <h2>Commentaires sur la Planète Mercure</h1>
+
+  <!-- Formulaire de commentaires -->
+  <div class="comment-form">
+    <h2>Laissez un commentaire</h2>
+    <form id="commentForm">
+      <label for="username">Nom :</label>
+      <input type="text" id="username" name="username" required placeholder="Entrez votre nom" />
+
+      <label for="comment">Commentaire :</label>
+      <textarea id="comment" name="comment" rows="4" required placeholder="Écrivez votre commentaire ici"></textarea>
+
+      <button type="submit">Publier</button>
+    </form>
+  </div>
+
+  <!-- Section des commentaires -->
+  <div class="comments-section">
+    <h2>Commentaires</h2>
+    <div id="commentsList">
+      <!-- Les commentaires seront ajoutés ici -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript pour ajouter des commentaires
+  document.getElementById("commentForm").addEventListener("submit", function(e) {
+    e.preventDefault();  // Empêche le rechargement de la page
+
+    // Récupérer les valeurs du formulaire
+    const username = document.getElementById("username").value;
+    const comment = document.getElementById("comment").value;
+
+    // Créer un nouvel élément pour afficher le commentaire
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment");
+
+    // Ajouter le contenu du commentaire à l'élément
+    commentDiv.innerHTML = `
+      <p><strong>${username}</strong> a dit :</p>
+      <p>${comment}</p>
+    `;
+
+    // Ajouter le commentaire à la section des commentaires
+    document.getElementById("commentsList").appendChild(commentDiv);
+
+    // Réinitialiser le formulaire après la soumission
+    document.getElementById("commentForm").reset();
+  });
+</script>
+</body>
+</html>
+<footer>
+  <p>&copy; 2024 Système Solaire</p>
+</footer>
+
+</body>
+</html>
