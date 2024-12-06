@@ -1,6 +1,51 @@
+// Gestion des bascules entre connexion et inscription
+const loginToggle = document.getElementById("login-toggle");
+const signupToggle = document.getElementById("signup-toggle");
+const loginForm = document.getElementById("login-form");
+const signupForm = document.getElementById("signup-form");
 
-// Script pour la page Vue du Système Solaire
+loginToggle.addEventListener("click", () => {
+  loginToggle.classList.add("active");
+  signupToggle.classList.remove("active");
+  loginForm.classList.add("active");
+  signupForm.classList.remove("active");
+});
 
+signupToggle.addEventListener("click", () => {
+  signupToggle.classList.add("active");
+  loginToggle.classList.remove("active");
+  signupForm.classList.add("active");
+  loginForm.classList.remove("active");
+});
+
+// Validation fictive pour la connexion et l'inscription
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = document.getElementById("login-username").value;
+  const password = document.getElementById("login-password").value;
+  if (username === "planete" && password === "galaxy123") {
+    alert("Connexion réussie ! Bienvenue dans le système solaire.");
+  } else {
+    const error = document.getElementById("login-error-message");
+    error.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
+    error.style.display = "block";
+  }
+});
+
+signupForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = document.getElementById("signup-username").value;
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("signup-password").value;
+
+  if (username && email && password) {
+    alert(`Inscription réussie ! Bienvenue ${username}.`);
+  } else {
+    const error = document.getElementById("signup-error-message");
+    error.textContent = "Veuillez remplir tous les champs.";
+    error.style.display = "block";
+  }
+});
 // Liste des planètes avec leurs informations
 const planetes = [
     { nom: "Mercure", description: "Première planète du système solaire", image: "data:image/jpeg;base64,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" },
@@ -107,51 +152,3 @@ document.querySelector(".forgot-password").addEventListener("click", function (e
 
 })
 
-// Gestion des bascules entre connexion et inscription
-const loginToggle = document.getElementById("login-toggle");
-const signupToggle = document.getElementById("signup-toggle");
-const loginForm = document.getElementById("login-form");
-const signupForm = document.getElementById("signup-form");
-
-loginToggle.addEventListener("click", () => {
-  loginToggle.classList.add("active");
-  signupToggle.classList.remove("active");
-  loginForm.classList.add("active");
-  signupForm.classList.remove("active");
-});
-
-signupToggle.addEventListener("click", () => {
-  signupToggle.classList.add("active");
-  loginToggle.classList.remove("active");
-  signupForm.classList.add("active");
-  loginForm.classList.remove("active");
-});
-
-// Validation fictive pour la connexion et l'inscription
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = document.getElementById("login-username").value;
-  const password = document.getElementById("login-password").value;
-  if (username === "planete" && password === "galaxy123") {
-    alert("Connexion réussie ! Bienvenue dans le système solaire.");
-  } else {
-    const error = document.getElementById("login-error-message");
-    error.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
-    error.style.display = "block";
-  }
-});
-
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = document.getElementById("signup-username").value;
-  const email = document.getElementById("signup-email").value;
-  const password = document.getElementById("signup-password").value;
-
-  if (username && email && password) {
-    alert(`Inscription réussie ! Bienvenue ${username}.`);
-  } else {
-    const error = document.getElementById("signup-error-message");
-    error.textContent = "Veuillez remplir tous les champs.";
-    error.style.display = "block";
-  }
-});
